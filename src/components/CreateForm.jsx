@@ -21,6 +21,21 @@ export default function CreateForm({ workouts, setWorkouts }) {
     setWeight("");
   };
 
+  // Supprimer exo
+  const handleDelete = (exoToDelete) => {
+    setWorkouts(workouts.filter((w) => w !== exoToDelete));
+  };
+
+  // Éditer exo
+  const handleEdit = (exoToEdit) => {
+    setExoName(exoToEdit.exoName);
+    setSets(exoToEdit.sets);
+    setReps(exoToEdit.reps);
+    setWeight(exoToEdit.weight);
+
+    handleDelete(exoToEdit);
+  };
+
   return (
     <form className="create_form_container" onSubmit={handleSubmit}>
       <input type="text" placeholder="Nom de l'exercice" className="input_exo_name" required value={exoName} onInput={(e) => setExoName(e.target.value)} />
@@ -36,7 +51,7 @@ export default function CreateForm({ workouts, setWorkouts }) {
       <ul>
         {workouts.map((w, index) => (
           <li key={index}>
-            <ExoItem key={index} exo={exo} onDelete={handleDelete} onEdit={handleEdit} />
+            <ExoItem key={index} exo={w} onDelete={handleDelete} onEdit={handleEdit} />
           </li>
         ))}
       </ul>
