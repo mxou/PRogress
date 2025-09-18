@@ -9,6 +9,7 @@ export default function Session({ index }) {
   const [expanded, setExpanded] = useState(null); // exo ouvert
   const [timer, setTimer] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
+  const [startTime, setStartTime] = useState(null);
 
   // Charger le programme
   useEffect(() => {
@@ -46,6 +47,34 @@ export default function Session({ index }) {
     const programs = await localforage.getItem("programs");
     programs[index] = updatedProgram;
     await localforage.setItem("programs", programs);
+  };
+
+  const handleStart = () => {
+    setIsRunning(true);
+    setStartTime(Date.now());
+  };
+
+  const handleFinish = async () => {
+    setIsRunning(false);
+
+    const endTime = Date.now();
+    const duration = Math.floor((endTime - startTime) / 1000); // en secondes
+    const date = new Date().toISOString();
+
+    const sessionData = {
+      programName: program.name,
+      date,
+      duration,
+      exercises: program.exercises,
+    };
+
+    // Sauvegarder dans l'historique
+    let history = (await localforage.getItem("history")) || [];
+    history.push(sessionData);
+    await localforage.setItem("history", history);
+
+    // Retour à l'accueil
+    route("/");
   };
 
   if (!program) return <p>Chargement...</p>;
@@ -113,9 +142,15 @@ export default function Session({ index }) {
         ))}
       </ul>
 
-      <button className="session_start_button" onClick={() => setIsRunning((r) => !r)}>
-        {isRunning ? "Pause" : "Démarrer"}
-      </button>
+      {!isRunning ? (
+        <button className="session_start_button" onClick={handleStart}>
+          Démarrer
+        </button>
+      ) : (
+        <button className="session_finish_button" onClick={handleFinish}>
+          Finir la séance
+        </button>
+      )}
     </main>
   );
 }
