@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <main>
       <Header HeaderTitle={"Programmes"} Return={false} />
-      <h1>Home</h1>
+
       <ul className="program_main_container">
         {programs.map((p, index) => (
           <li key={index} className="programs_container" onClick={() => handleClickProgram(index)}>

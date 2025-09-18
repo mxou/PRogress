@@ -1,43 +1,117 @@
-.program_main_container {
+.create_form_container {
+  background-color: #101826;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input_exo_name,
+.create_form_container input,
+.create_form_container button {
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create_form_container input {
+  background-color: #1e2936;
+  color: white;
+}
+
+.create_form_container input::placeholder {
+  color: #9ca3af;
+}
+
+.create_form_container button {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.create_form_container button:active {
+  background-color: #2563eb;
+}
+
+.s_r_container,
+.submit_container {
+  display: flex;
+  gap: 12px;
+}
+
+.s_r_container input,
+.submit_container input {
+  flex: 1;
+}
+
+.create_form_container ul {
+  list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+.create_form_container li {
+  margin-bottom: 8px;
+}
+
+/* Program list styles */
+.program_main_container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .programs_container {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid var(--subcolor);
-  border-radius: 5px;
-  gap: 5px;
+  background-color: #1e2936;
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.programs_container:active {
+  background-color: #2a3441;
 }
 
 .program_icon {
-  width: 50px;
-  height: 50px;
-  padding: 10px;
+  width: 32px;
+  height: 32px;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.program_data_container {
+  flex: 1;
+  margin-left: 12px;
 }
 
 .program_data_name {
-  font-size: 1.8rem;
+  font-size: 16px;
   font-weight: 600;
+  color: white;
+  margin: 0 0 4px 0;
 }
 
 .program_data_type {
-  font-size: 1.4rem;
-  color: rgb(87, 93, 129);
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0;
 }
 
 .program_chevron {
-  color: var(--subcolor);
-  width: 30px;
-  height: 30px;
-}
-
-.program_data_container p {
-  margin: 0 0 0 0;
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+  flex-shrink: 0;
 }
