@@ -1,24 +1,143 @@
-/* Session.css */
+.create_form_container {
+  background-color: #101826;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 
+.input_exo_name,
+.create_form_container input,
+.create_form_container button {
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create_form_container input {
+  background-color: #1e2936;
+  color: white;
+}
+
+.create_form_container input::placeholder {
+  color: #9ca3af;
+}
+
+.create_form_container button {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.create_form_container button:active {
+  background-color: #2563eb;
+}
+
+.s_r_container,
+.submit_container {
+  display: flex;
+  gap: 12px;
+}
+
+.s_r_container input,
+.submit_container input {
+  flex: 1;
+}
+
+.create_form_container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.create_form_container li {
+  margin-bottom: 8px;
+}
+
+/* Program list styles */
+.program_main_container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.programs_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1e2936;
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.programs_container:active {
+  background-color: #2a3441;
+}
+
+.program_icon {
+  width: 24px;
+  height: 24px;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.program_data_container {
+  flex: 1;
+  margin-left: 12px;
+}
+
+.program_data_name {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 4px 0;
+}
+
+.program_data_type {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.program_chevron {
+  width: 20px;
+  height: 20px;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+
+/* Session styles */
 .session_timer {
   text-align: center;
   padding: 16px;
   font-size: 16px;
   font-weight: 500;
-  color: #495057;
+  color: #9ca3af;
+  background-color: #101826;
 }
 
 .session_main_container {
   list-style: none;
   padding: 0 16px;
   margin: 0 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .session_exo_container {
-  background: #f8f9fa;
-  border-radius: 12px;
-  border: 1px solid #e9ecef;
-  margin-bottom: 12px;
+  background-color: #1e2936;
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -26,25 +145,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
-  padding: 8px 16px;
+  gap: 8px;
+  padding: 16px;
 }
 
 .session_exo_name {
   font-weight: 600;
-  font-size: 18px;
-  color: #212529;
+  font-size: 16px;
+  color: white;
   margin: 0;
-  flex: 1;
 }
 
 .session_exo_datas {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 15px;
-  color: #6c757d;
-  margin: 0 16px 0 0;
+  font-size: 14px;
+  color: #9ca3af;
 }
 
 .session_exo_sets,
@@ -53,26 +170,27 @@
 }
 
 .session_edit_button {
-  background: #007bff;
+  background-color: #3b82f6;
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 10px 16px;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: transform 0.1s ease;
-  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s ease;
 }
 
 .session_edit_button:active {
-  transform: scale(0.95);
+  background-color: #2563eb;
 }
 
 .session_exo_edit {
   padding: 16px;
-  background: #ffffff;
-  border-top: 1px solid #e9ecef;
+  background-color: #101826;
+  border-right: 1px solid #374151;
+  border-left: 1px solid #374151;
+  border-bottom: 1px solid #374151;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -81,27 +199,27 @@
 .session_edit_sets_input,
 .session_edit_reps_input,
 .session_edit_weight_input {
-  padding: 12px;
-  border: 1px solid #ced4da;
+  padding: 14px;
+  border: none;
   border-radius: 8px;
   font-size: 16px;
-  background: #ffffff;
-  color: #1a1a1a;
+  background-color: #1e2936;
+  color: white;
+  box-sizing: border-box;
 }
 
-.session_edit_sets_input:focus,
-.session_edit_reps_input:focus,
-.session_edit_weight_input:focus {
-  outline: none;
-  border-color: #007bff;
+.session_edit_sets_input::placeholder,
+.session_edit_reps_input::placeholder,
+.session_edit_weight_input::placeholder {
+  color: #9ca3af;
 }
 
 .session_exo_edit label {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   font-size: 16px;
-  color: #495057;
+  color: white;
   cursor: pointer;
 }
 
@@ -109,25 +227,37 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
+  accent-color: #3b82f6;
 }
 
-.session_start_button {
+.session_start_button,
+.session_finish_button {
   position: fixed;
   bottom: 20px;
   left: 16px;
   right: 16px;
   height: 56px;
-  background: #28a745;
   color: white;
   border: none;
-  border-radius: 12px;
-  font-size: 18px;
+  border-radius: 8px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.1s ease;
-  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.session_start_button {
+  background-color: #10b981;
 }
 
 .session_start_button:active {
-  transform: scale(0.98);
+  background-color: #059669;
+}
+
+.session_finish_button {
+  background-color: #ef4444;
+}
+
+.session_finish_button:active {
+  background-color: #dc2626;
 }
