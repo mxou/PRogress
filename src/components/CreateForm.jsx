@@ -47,7 +47,21 @@ export default function CreateForm() {
       <ul>
         {workouts.map((w, index) => (
           <li key={index}>
-            {w.exoName} — {w.sets}x{w.reps} — {w.weight} kg
+            <div className="exo_container">
+              <div className="exo_datas_container">
+                <p className="exo_name">{w.exoName}</p>
+                <div className="exo_datas">
+                  <p className="exo_sets">
+                    {w.sets}x{w.reps}
+                  </p>
+                  <p className="exo_weight"> - {w.weight}Kg</p>
+                </div>
+              </div>
+              <div className="exo_buttons_container">
+                <button className="exo_delete_button">x</button>
+                <button className="exo_edit_button">...</button>
+              </div>
+            </div>
           </li>
         ))}
       </ul>
