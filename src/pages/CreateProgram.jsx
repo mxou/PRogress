@@ -20,7 +20,7 @@ export default function CreateProgram() {
       exercises: workouts,
     };
 
-    // Sauvegarde du programme dans localForage
+    // Sauvegarde programme dans localForage
     const existingPrograms = (await localforage.getItem("programs")) || [];
     await localforage.setItem("programs", [...existingPrograms, program]);
 
