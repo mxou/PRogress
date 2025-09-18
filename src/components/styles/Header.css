@@ -1,0 +1,20 @@
+.header_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid var(--subcolor);
+}
+
+.header_back_button,
+.header_add_button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 2rem;
+}
