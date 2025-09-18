@@ -1,7 +1,8 @@
 import Header from "../components/Header";
 import { useState } from "preact/hooks";
 import localforage from "localforage";
-import { Smile } from "lucide-preact";
+import { Smile, ChevronRight } from "lucide-preact";
+import "./styles/Home.css";
 
 export default function Home() {
   const [programs, setPrograms] = useState([]);
@@ -16,14 +17,15 @@ export default function Home() {
     <main>
       <Header HeaderTitle={"Programmes"} Return={false} />
       <h1>Home</h1>
-      <ul>
+      <ul className="program_main_container">
         {programs.map((p, index) => (
-          <li key={index}>
-            <Smile />
+          <li key={index} className="programs_container">
+            <Smile className="program_icon" />
             <div className="program_data_container">
-              {p.name} - {p.type}
+              <p className="program_data_name">{p.name}</p>
+              <p className="program_data_type">{p.type}</p>
             </div>
-            <p>L</p>
+            <ChevronRight className="program_chevron" />
           </li>
         ))}
       </ul>
