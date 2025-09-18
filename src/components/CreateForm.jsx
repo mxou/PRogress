@@ -1,29 +1,18 @@
-import { useState } from "react";
+import { useState } from "preact/hooks";
 import localforage from "localforage";
+import ExoItem from "./ExoItem";
 import "./styles/CreateForm.css";
 
-export default function CreateForm() {
+export default function CreateForm({ workouts, setWorkouts }) {
   const [exoName, setExoName] = useState("");
   const [sets, setSets] = useState("");
   const [reps, setReps] = useState("");
   const [weight, setWeight] = useState("");
-  const [workouts, setWorkouts] = useState([]);
 
-  // Charger datas existantes render
-  useState(() => {
-    localforage.getItem("workouts").then((data) => {
-      if (data) setWorkouts(data);
-    });
-  }, []);
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const newWorkout = { exoName, sets, reps, weight };
-    const updatedWorkout = [...workouts, newWorkout];
-
-    // Save localforage
-    await localforage.setItem("workouts", updatedWorkout);
-    setWorkouts(updatedWorkout);
+    setWorkouts([...workouts, newWorkout]);
 
     // Reset formulaire
     setExoName("");
@@ -47,21 +36,7 @@ export default function CreateForm() {
       <ul>
         {workouts.map((w, index) => (
           <li key={index}>
-            <div className="exo_container">
-              <div className="exo_datas_container">
-                <p className="exo_name">{w.exoName}</p>
-                <div className="exo_datas">
-                  <p className="exo_sets">
-                    {w.sets}x{w.reps}
-                  </p>
-                  <p className="exo_weight"> - {w.weight}Kg</p>
-                </div>
-              </div>
-              <div className="exo_buttons_container">
-                <button className="exo_delete_button">x</button>
-                <button className="exo_edit_button">...</button>
-              </div>
-            </div>
+            <ExoItem key={index} exo={exo} onDelete={handleDelete} onEdit={handleEdit} />
           </li>
         ))}
       </ul>

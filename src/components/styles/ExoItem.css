@@ -1,0 +1,76 @@
+.exo_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  min-height: 70px;
+  border: 1px solid var(--subcolor);
+}
+
+.exo_datas_container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 6px;
+  /* flex: 1; */
+}
+
+.exo_name {
+  font-weight: 600;
+  font-size: 20px;
+  color: #212529;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.exo_datas {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--subcolor);
+  margin: 0;
+}
+
+.exo_sets,
+.exo_weight {
+  margin: 0;
+}
+
+.exo_buttons_container {
+  display: flex;
+  gap: 12px;
+  /* margin-left: 16px; */
+}
+
+.exo_buttons_container button {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.exo_delete_button {
+  background: #dc3545;
+  color: white;
+}
+
+.exo_delete_button:active {
+  transform: scale(0.95);
+}
+
+.exo_edit_button {
+  background: #6c757d;
+  color: white;
+}
+
+.exo_edit_button:active {
+  transform: scale(0.95);
+}
