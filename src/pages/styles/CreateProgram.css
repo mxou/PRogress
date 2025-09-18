@@ -1,0 +1,25 @@
+.data_program_input {
+  background-color: #1e2936;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
+  margin: 10px;
+  color: white;
+}
+
+.data_program_input::placeholder {
+  color: #9ca3af;
+}
+
+.create_program_button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: transform 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+}

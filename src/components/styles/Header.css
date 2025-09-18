@@ -9,6 +9,7 @@
   left: 0;
   width: 100%;
   border-bottom: 1px solid var(--subcolor);
+  padding: 8px 0;
 }
 
 .header_back_button,

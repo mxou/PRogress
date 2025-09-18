@@ -1,30 +1,53 @@
 .create_form_container {
   background-color: #101826;
-  padding: 5px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 12px;
 }
 
+.input_exo_name,
 .create_form_container input,
 .create_form_container button {
-  border-radius: 5px;
-  margin: 5px;
   border: none;
-  padding: 10px 10px;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 16px;
   width: 100%;
+}
+
+.create_form_container input {
+  background-color: #1e2936;
+  color: white;
+}
+
+.create_form_container input::placeholder {
+  color: #9ca3af;
+}
+
+.create_form_container button {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.create_form_container button:active {
+  background-color: #2563eb;
 }
 
 .s_r_container,
 .submit_container {
   display: flex;
-  width: 100%;
-  flex-direction: row;
+  gap: 12px;
 }
 
 .create_form_container ul {
-  list-style-type: none;
-  text-align: center;
+  list-style: none;
   padding: 0;
-  width: 100%;
+  margin: 0;
+}
+
+.create_form_container li {
+  margin-bottom: 8px;
 }
