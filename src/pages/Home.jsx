@@ -1,8 +1,9 @@
 import Header from "../components/Header";
-import { useState } from "preact/hooks";
+import { useState, useEffect } from "preact/hooks";
 import localforage from "localforage";
 import { Smile, ChevronRight } from "lucide-preact";
 import { route } from "preact-router";
+import Navbar from "../components/Navbar";
 
 import "./styles/Home.css";
 
@@ -10,7 +11,8 @@ export default function Home() {
   const [programs, setPrograms] = useState([]);
 
   // Charger datas existantes render
-  useState(() => {
+
+  useEffect(() => {
     localforage.getItem("programs").then((data) => {
       if (data) setPrograms(data);
     });
@@ -36,6 +38,7 @@ export default function Home() {
           </li>
         ))}
       </ul>
+      <Navbar />
     </main>
   );
 }

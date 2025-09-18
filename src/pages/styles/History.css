@@ -1,0 +1,55 @@
+.history_container {
+  list-style: none;
+  padding: 0;
+  width: 100vw;
+}
+
+.history_item {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--subcolor);
+  gap: 16px;
+}
+
+.history_thumbnail {
+  width: 60px;
+  height: 60px;
+  background: #bdc3c7;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.history_content {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.history_program_name {
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.history_program_date {
+  font-size: 14px;
+  color: #95a5a6;
+  margin: 0;
+}
+
+.history_program_stats {
+  font-size: 14px;
+  color: #95a5a6;
+  margin: 0;
+}
+
+.history_arrow {
+  color: #95a5a6;
+  font-size: 18px;
+  flex-shrink: 0;
+}
