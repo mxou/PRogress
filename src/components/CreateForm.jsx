@@ -1,7 +1,8 @@
 import { useState } from "preact/hooks";
 import localforage from "localforage";
 import ExoItem from "./ExoItem";
-import "./styles/CreateForm.css";
+// import "./styles/CreateForm.css";
+import styles from "./styles/CreateForm.module.css";
 
 export default function CreateForm({ workouts, setWorkouts }) {
   const [exoName, setExoName] = useState("");
@@ -37,13 +38,20 @@ export default function CreateForm({ workouts, setWorkouts }) {
   };
 
   return (
-    <form className="create_form_container" onSubmit={handleSubmit}>
-      <input type="text" placeholder="Nom de l'exercice" className="input_exo_name" required value={exoName} onInput={(e) => setExoName(e.target.value)} />
-      <div className="s_r_container">
+    <form className={styles.create_form_container} onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Nom de l'exercice"
+        className={styles.input_exo_name}
+        required
+        value={exoName}
+        onInput={(e) => setExoName(e.target.value)}
+      />
+      <div className={styles.s_r_container}>
         <input type="number" placeholder="Séries" required value={sets} onInput={(e) => setSets(e.target.value)} />
         <input type="number" placeholder="Répétitions" required value={reps} onInput={(e) => setReps(e.target.value)} />
       </div>
-      <div className="submit_container">
+      <div className={styles.submit_container}>
         <input type="number" placeholder="Poids" required value={weight} onInput={(e) => setWeight(e.target.value)} />
         <button type="submit">Ajouter</button>
       </div>

@@ -2,7 +2,7 @@ import Header from "../components/Header";
 import CreateForm from "../components/CreateForm";
 import { useState } from "preact/hooks";
 import localforage from "localforage";
-import "./styles/CreateProgram.css";
+import styles from "./styles/CreateProgram.module.css";
 
 export default function CreateProgram() {
   const [programName, setProgramName] = useState("");
@@ -35,12 +35,24 @@ export default function CreateProgram() {
   return (
     <main>
       <Header HeaderTitle={"Créer un programme"} Return={true} />
-      <div style={{ margin: "1rem 0" }}>
-        <input className="data_program_input" type="text" placeholder="Nom du programme" value={programName} onInput={(e) => setProgramName(e.target.value)} />
-        <input className="data_program_input" type="text" placeholder="Type de programme" value={programType} onInput={(e) => setProgramType(e.target.value)} />
+      <div className={styles.program_inputs_container}>
+        <input
+          className={styles.data_program_input}
+          type="text"
+          placeholder="Nom du programme"
+          value={programName}
+          onInput={(e) => setProgramName(e.target.value)}
+        />
+        <input
+          className={styles.data_program_input}
+          type="text"
+          placeholder="Type de programme"
+          value={programType}
+          onInput={(e) => setProgramType(e.target.value)}
+        />
       </div>
       <CreateForm workouts={workouts} setWorkouts={setWorkouts} />
-      <button type="button" onClick={handleCreateProgram} className="create_program_button">
+      <button type="button" onClick={handleCreateProgram} className={styles.create_program_button}>
         Créer
       </button>
     </main>

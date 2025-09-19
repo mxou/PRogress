@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import localforage from "localforage";
+import styles from "./styles/Performances.module.css";
 
 export default function Performances() {
   //   useEffect(() => {

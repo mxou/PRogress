@@ -1,4 +1,4 @@
-import "./styles/Session.css";
+import styles from "./styles/Session.module.css";
 import Header from "../components/Header";
 import { useState, useEffect } from "preact/hooks";
 import localforage from "localforage";
@@ -83,7 +83,7 @@ export default function Session({ index }) {
     <main>
       <Header HeaderTitle={program.name} Return={true} />
 
-      <div className="session_timer">
+      <div className={styles.session_timer}>
         {isRunning ? (
           <p>
             ⏱ {Math.floor(timer / 60)}:{(timer % 60).toString().padStart(2, "0")}
@@ -93,41 +93,41 @@ export default function Session({ index }) {
         )}
       </div>
 
-      <ul className="session_main_container">
+      <ul className={styles.session_main_container}>
         {program.exercises.map((exo, idx) => (
-          <li key={idx} className="session_exo_container">
-            <div className="session_exo_datas_container">
-              <p className="session_exo_name">{exo.exoName}</p>
-              <div className="session_exo_datas">
-                <p className="session_exo_sets">
+          <li key={idx} className={styles.session_exo_container}>
+            <div className={styles.session_exo_datas_container}>
+              <p className={styles.session_exo_name}>{exo.exoName}</p>
+              <div className={styles.session_exo_datas}>
+                <p className={styles.session_exo_sets}>
                   {exo.sets}x{exo.reps}
                 </p>
-                <p className="session_exo_weight"> - {exo.weight}Kg</p>
+                <p className={styles.session_exo_weight}> - {exo.weight}Kg</p>
               </div>
-              <button className="session_edit_button" onClick={() => toggleExo(idx)}>
+              <button className={styles.session_edit_button} onClick={() => toggleExo(idx)}>
                 {expanded === idx ? "Fermer" : "Modifier"}
               </button>
             </div>
 
             {expanded === idx && (
-              <div className="session_exo_edit">
+              <div className={styles.session_exo_edit}>
                 <input
                   type="number"
-                  className="session_edit_sets_input"
+                  className={styles.session_edit_sets_input}
                   placeholder="Séries"
                   value={exo.sets}
                   onInput={(e) => handleUpdateExo(idx, { sets: e.target.value })}
                 />
                 <input
                   type="number"
-                  className="session_edit_reps_input"
+                  className={styles.session_edit_reps_input}
                   placeholder="Répétitions"
                   value={exo.reps}
                   onInput={(e) => handleUpdateExo(idx, { reps: e.target.value })}
                 />
                 <input
                   type="number"
-                  className="session_edit_weight_input"
+                  className={styles.session_edit_weight_input}
                   placeholder="Poids"
                   value={exo.weight}
                   onInput={(e) => handleUpdateExo(idx, { weight: e.target.value })}
@@ -143,11 +143,11 @@ export default function Session({ index }) {
       </ul>
 
       {!isRunning ? (
-        <button className="session_start_button" onClick={handleStart}>
+        <button className={styles.session_start_button} onClick={handleStart}>
           Démarrer
         </button>
       ) : (
-        <button className="session_finish_button" onClick={handleFinish}>
+        <button className={styles.session_finish_button} onClick={handleFinish}>
           Finir la séance
         </button>
       )}
