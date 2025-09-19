@@ -1,0 +1,25 @@
+.select_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.select_container select {
+  padding: 5px 12px;
+  border-radius: 8px;
+}
+
+.exo_categ {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #1f2937;
+  margin: 10px 0;
+  border: 1px solid #2a3443;
+  border-radius: 20px;
+}
+
+.active {
+  color: #007bff;
+}
