@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "chart.js": "^4.5.0",
+    "chartjs": "^0.3.24",
     "localforage": "^1.10.0",
     "lucide-preact": "^0.544.0",
     "preact": "^10.27.2",
