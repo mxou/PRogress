@@ -16,10 +16,13 @@
   align-items: center;
   background-color: #1f2937;
   margin: 10px 0;
+  padding: 3px;
   border: 1px solid #2a3443;
   border-radius: 20px;
 }
 
 .active {
-  color: #007bff;
+  background-color: #007bff;
+  padding: 1px 6px;
+  border-radius: 50px;
 }

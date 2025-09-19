@@ -14,7 +14,7 @@ export default function Performances() {
 
   const [categ, setCateg] = useState(null);
 
-  const handleClickCateg = () => {
+  const handleClickCateg = (name) => {
     setCateg(name);
   };
   return (
